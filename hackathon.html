@@ -20,8 +20,8 @@
     <meta property="twitter:description" content="Real-time contribution tracking and leaderboards for BUDE Global projects.">
     <meta property="twitter:image" content="https://hackathon.budeglobal.in/images/BUDE_GLOBAL_BUDE_Hackathons_MARCH.svg">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN with Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -40,6 +40,9 @@
     
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Marked.js for Markdown Support -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -232,16 +235,27 @@
         <!-- Main Content Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             <!-- Left Column - Info & Repositories -->
-            <div class="lg:col-span-2">
-                <!-- Description -->
-                <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-6 sm:mb-8">
-                    <h2 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800">About this Hackathon</h2>
-                    <div class="prose max-w-none" id="hackathon-description">
-                        <p class="text-gray-600">Loading description...</p>
+            <div class="lg:col-span-2 space-y-6 sm:space-y-8">
+                <!-- Overview & Rules Card -->
+                <div class="bg-white rounded-xl shadow-sm border border-border overflow-hidden">
+                    <div class="px-5 py-4 sm:px-6 sm:py-5 border-b border-border bg-slate-50/50">
+                        <h2 class="text-lg font-bold text-foreground flex items-center gap-2">
+                            <i class="fas fa-info-circle text-primary/70"></i>
+                            Hackathon Overview
+                        </h2>
                     </div>
-                    <div class="mt-6" id="rules-section" style="display: none;">
-                        <h3 class="text-lg sm:text-xl font-semibold mb-2 text-gray-800">Rules</h3>
-                        <div class="prose max-w-none whitespace-pre-line" id="hackathon-rules"></div>
+                    <div class="p-5 sm:p-6 space-y-6">
+                        <!-- Description -->
+                        <div id="hackathon-description" class="prose prose-sm prose-slate max-w-none text-muted-foreground leading-relaxed"></div>
+                        
+                        <!-- Rules Section -->
+                        <div id="rules-section" class="pt-6 border-t border-border/50" style="display: none;">
+                            <h3 class="text-base font-bold text-foreground mb-3 flex items-center gap-2">
+                                <i class="fas fa-list-check text-primary/70"></i>
+                                Participation Rules
+                            </h3>
+                            <div id="hackathon-rules" class="prose prose-sm prose-slate max-w-none prose-headings:text-foreground prose-headings:font-semibold prose-h3:text-sm prose-h3:mt-3 prose-h3:mb-1.5 prose-p:my-1.5 prose-li:my-0.5 text-muted-foreground"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -320,6 +334,9 @@
                         <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/success-stories">Success Stories</a></li>
                         <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/about">About Us</a></li>
                         <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/contact">Contact</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/privacy">Privacy Policy</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/terms">Terms of Service</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/code-of-conduct">Code of Conduct</a></li>
                     </ul>
                 </div>
                 
