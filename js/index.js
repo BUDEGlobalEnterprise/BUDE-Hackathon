@@ -162,6 +162,8 @@ class HackathonIndex {
                 <div class="hackathon-card bg-white rounded-lg shadow-lg overflow-hidden" data-status="${status.status}">
                     ${hackathon.bannerImage ? `
                     <div class="h-48 bg-cover bg-center relative" style="background-image: url('${hackathon.bannerImage}');">
+                        <!-- Overlay for better readability -->
+                        <div class="absolute inset-0 bg-black opacity-30"></div>
                         <div class="absolute top-4 right-4">
                             <span class="px-3 py-1 rounded-full text-sm font-medium ${status.class}">
                                 ${status.label}
@@ -169,7 +171,7 @@ class HackathonIndex {
                         </div>
                     </div>
                     ` : `
-                    <div class="bg-gradient-to-r from-red-600 to-red-800 p-6 text-white">
+                    <div class="bg-gradient-to-r from-blue-700 to-blue-900 p-6 text-white">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold flex-grow">${this.escapeHtml(hackathon.name)}</h3>
                             <span class="px-3 py-1 rounded-full text-sm font-medium ${status.class}">
@@ -224,7 +226,7 @@ class HackathonIndex {
                         ` : '<div class="mb-4"></div>'}
                         
                         <a href="hackathon.html?slug=${encodeURIComponent(hackathon.slug)}" 
-                           class="block w-full text-center px-4 py-2 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition">
+                           class="block w-full text-center px-4 py-2 bg-blue-700 text-white font-medium rounded-lg hover:bg-blue-800 transition">
                             View Details
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
@@ -266,7 +268,7 @@ class HackathonIndex {
                 const resetDate = new Date(rl.reset * 1000);
                 const resetTime = resetDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
                 const pct = Math.round((rl.remaining / rl.limit) * 100);
-                const barColor = pct > 50 ? 'bg-green-500' : pct > 20 ? 'bg-yellow-500' : 'bg-red-500';
+                const barColor = pct > 50 ? 'bg-green-500' : pct > 20 ? 'bg-yellow-500' : 'bg-blue-500';
                 rateLimitHtml = `
                     <span class="text-gray-400">|</span>
                     <span>API calls: <strong>${rl.remaining}</strong> / ${rl.limit} remaining</span>
@@ -300,7 +302,7 @@ function filterHackathons(status) {
     // Update button styles
     document.querySelectorAll('.filter-btn').forEach(btn => {
         if (btn.dataset.filter === status) {
-            btn.className = 'filter-btn px-4 py-2 rounded-lg bg-red-600 text-white font-medium';
+            btn.className = 'filter-btn px-4 py-2 rounded-lg bg-blue-700 text-white font-medium';
         } else {
             btn.className = 'filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-medium hover:bg-gray-300';
         }

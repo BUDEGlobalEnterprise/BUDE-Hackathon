@@ -221,7 +221,7 @@ class HackathonDashboard {
                              class="w-8 h-8 rounded-full mr-3" width="32" height="32">
                         <div class="flex-grow">
                             <div class="font-medium flex items-center gap-2">
-                                <a href="${participant.url}" target="_blank" class="hover:text-red-600">
+                                <a href="${participant.url}" target="_blank" class="hover:text-blue-700">
                                     ${this.escapeHtml(participant.username)}
                                 </a>
                                 ${trophyIcon}
@@ -233,7 +233,7 @@ class HackathonDashboard {
                         <a href="https://github.com/search?q=author%3A${participant.username}+type%3Apr" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           class="ml-2 px-2 sm:px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-xs sm:text-sm font-medium whitespace-nowrap"
+                           class="ml-2 px-2 sm:px-3 py-1 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors text-xs sm:text-sm font-medium whitespace-nowrap"
                            title="View all PRs by ${this.escapeHtml(participant.username)}">
                             <i class="fas fa-external-link-alt mr-1"></i>
                             <span class="hidden sm:inline">View PRs</span>
@@ -283,7 +283,7 @@ class HackathonDashboard {
                              class="w-8 h-8 rounded-full mr-3" width="32" height="32">
                         <div class="flex-grow">
                             <div class="font-medium flex items-center gap-2">
-                                <a href="${participant.url}" target="_blank" class="hover:text-red-600">
+                                <a href="${participant.url}" target="_blank" class="hover:text-blue-700">
                                     ${this.escapeHtml(participant.username)}
                                 </a>
                                 ${trophyIcon}
@@ -295,7 +295,7 @@ class HackathonDashboard {
                         <a href="https://github.com/search?q=reviewed-by%3A${participant.username}+type%3Apr" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           class="ml-2 px-2 sm:px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-xs sm:text-sm font-medium whitespace-nowrap"
+                           class="ml-2 px-2 sm:px-3 py-1 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors text-xs sm:text-sm font-medium whitespace-nowrap"
                            title="View all reviews by ${this.escapeHtml(participant.username)}">
                             <i class="fas fa-external-link-alt mr-1"></i>
                             <span class="hidden sm:inline">View Reviews</span>
@@ -345,8 +345,8 @@ class HackathonDashboard {
                 datasets: [{
                     label: 'Pull Requests',
                     data: data,
-                    backgroundColor: 'rgba(239, 68, 68, 0.8)',
-                    borderColor: 'rgba(220, 38, 38, 1)',
+                    backgroundColor: 'rgba(29, 78, 216, 0.8)',
+                    borderColor: 'rgba(30, 58, 138, 1)',
                     borderWidth: 2,
                     borderRadius: 4,
                     barThickness: 'flex',
@@ -437,8 +437,8 @@ class HackathonDashboard {
      */
     generateColors(count) {
         const colors = [
-            'rgba(239, 68, 68, 0.8)',   // red
-            'rgba(59, 130, 246, 0.8)',  // blue
+            'rgba(29, 78, 216, 0.8)',   // blue
+            'rgba(59, 130, 246, 0.8)',  // light blue
             'rgba(34, 197, 94, 0.8)',   // green
             'rgba(249, 115, 22, 0.8)',  // orange
             'rgba(168, 85, 247, 0.8)',  // purple
@@ -492,7 +492,7 @@ class HackathonDashboard {
                         <div class="flex items-center">
                             <i class="fab fa-github text-gray-600 mr-2"></i>
                             <a href="https://github.com/${repoPath}" target="_blank"
-                               class="font-medium hover:text-red-600">
+                               class="font-medium hover:text-blue-700">
                                 ${repoPath}
                             </a>
                         </div>
@@ -561,7 +561,7 @@ class HackathonDashboard {
                 if (this.config.sponsorLink) {
                     html += `
                         <a href="${this.config.sponsorLink}" target="_blank"
-                           class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700">
+                           class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-700 hover:bg-blue-800">
                             <i class="fas fa-handshake mr-2"></i>
                             Become a Sponsor
                         </a>
@@ -639,7 +639,7 @@ class HackathonDashboard {
             const resetDate = new Date(rl.reset * 1000);
             const resetTime = resetDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
             const pct = Math.round((rl.remaining / rl.limit) * 100);
-            const barColor = pct > 50 ? 'bg-green-500' : pct > 20 ? 'bg-yellow-500' : 'bg-red-500';
+            const barColor = pct > 50 ? 'bg-green-500' : pct > 20 ? 'bg-yellow-500' : 'bg-blue-500';
             rateLimitHtml = `
                 <span class="text-gray-400">|</span>
                 <span>API calls: <strong>${rl.remaining}</strong> / ${rl.limit} remaining</span>
@@ -689,7 +689,7 @@ class HackathonDashboard {
             case 'approved':
                 return 'bg-green-100 text-green-700';
             case 'changes_requested':
-                return 'bg-red-100 text-red-700';
+                return 'bg-amber-100 text-amber-700';
             case 'commented':
                 return 'bg-blue-100 text-blue-700';
             default:
@@ -737,7 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas fa-exclamation-triangle text-4xl mb-4"></i>
                         <h2 class="text-2xl font-bold mb-2">Hackathon Not Found</h2>
                         <p class="text-lg mb-4">The requested hackathon could not be found.</p>
-                        <a href="index.html" class="inline-block px-6 py-3 bg-white text-red-600 rounded-lg font-medium hover:bg-gray-100">
+                        <a href="index.html" class="inline-block px-6 py-3 bg-white text-blue-700 rounded-lg font-medium hover:bg-gray-100">
                             View All Hackathons
                         </a>
                     </div>

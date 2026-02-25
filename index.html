@@ -26,6 +26,21 @@
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1d4ed8',
+                        foreground: '#0f172a',
+                        muted: '#f1f5f9',
+                        'muted-foreground': '#64748b',
+                        border: '#e2e8f0',
+                    }
+                }
+            }
+        }
+    </script>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -68,14 +83,14 @@
                     <a href="https://github.com/BUDEGlobalEnterprise/BUDE-Hackathon/issues/new?template=create-hackathon.yml"
                        target="_blank"
                        rel="noopener noreferrer"
-                       class="px-3 py-2 sm:px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium flex items-center space-x-2"
+                       class="px-3 py-2 sm:px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-2"
                        aria-label="Create a new hackathon">
                         <i class="fas fa-plus"></i>
                         <span class="btn-text">Create Hackathon</span>
                     </a>
                     <a href="https://github.com/BUDEGlobalEnterprise/BUDE-Hackathon" target="_blank" 
                        rel="noopener noreferrer"
-                       class="px-3 py-2 sm:px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium flex items-center space-x-2"
+                       class="px-3 py-2 sm:px-4 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors font-medium flex items-center space-x-2"
                        aria-label="Contribute on GitHub">
                         <i class="fab fa-github"></i>
                         <span class="btn-text">Contribute on GitHub</span>
@@ -91,7 +106,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-red-600 to-red-800 text-white py-8 sm:py-12 lg:py-16">
+    <div class="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-8 sm:py-12 lg:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4" id="hero-title">Open Source Hackathons</h2>
             <p class="text-base sm:text-lg lg:text-xl mb-4 sm:mb-6" id="hero-description">
@@ -108,7 +123,7 @@
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-0">Available Hackathons</h2>
                 <div class="flex flex-wrap gap-2 sm:gap-4">
                     <button onclick="filterHackathons('all')" 
-                            class="filter-btn px-3 sm:px-4 py-2 rounded-lg bg-red-600 text-white font-medium text-sm sm:text-base"
+                            class="filter-btn px-3 sm:px-4 py-2 rounded-lg bg-blue-700 text-white font-medium text-sm sm:text-base"
                             data-filter="all">
                         All
                     </button>
@@ -133,7 +148,7 @@
             <div id="hackathons-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 <!-- Hackathon cards will be inserted here -->
                 <div class="col-span-full text-center py-12">
-                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-red-600"></div>
+                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-700"></div>
                     <p class="mt-4 text-gray-600">Loading hackathons...</p>
                 </div>
             </div>
@@ -163,7 +178,7 @@
                 </ul>
                 <p>
                     Pick a hackathon above to get started, or check out our 
-                    <a href="https://github.com/BUDEGlobalEnterprise" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:underline">
+                    <a href="https://github.com/BUDEGlobalEnterprise" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline">
                         GitHub organization
                     </a> 
                     to learn more about our projects.
@@ -173,16 +188,88 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-600">
-            <div id="github-api-info" class="mb-3 text-gray-500"></div>
-            <p>
-                Powered by 
-                <a href="https://github.com/BUDEGlobalEnterprise/BUDE-Hackathon" 
-                   class="text-red-600 hover:underline" target="_blank" rel="noopener noreferrer">
-                    BUDE-Hackathon
-                </a>
-            </p>
+    <footer class="bg-muted/30 border-t border-border/50 mt-12">
+        <div class="max-w-7xl mx-auto px-6 py-6">
+            <div id="github-api-info" class="mb-6 text-center"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-6 text-left">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="images/BUDE-Logo.png" alt="Bude Global Enterprise Logo" class="h-10 w-auto" width="168" height="140">
+                        <div>
+                            <h3 class="font-bold text-foreground">Bude Global Enterprise</h3>
+                            <p class="text-xs text-muted-foreground">Technology, Talent, and Trade</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-muted-foreground leading-relaxed">Connecting businesses worldwide through innovative technology solutions, talented professionals, and efficient B2B marketplace platforms.</p>
+                    <div class="flex gap-1">
+                        <a href="https://linkedin.com/company/budeglobal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                        <a href="https://youtube.com/@BudeGlobalEnterprise" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors"><i class="fab fa-youtube text-lg"></i></a>
+                        <a href="https://twitter.com/budeglobalerp" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors"><i class="fab fa-twitter text-lg"></i></a>
+                        <a href="https://facebook.com/people/BUDE-Global-Enterprises/61571350471227/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors"><i class="fab fa-facebook text-lg"></i></a>
+                        <a href="https://instagram.com/budeglobal" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="https://wa.me/919361621891" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors"><i class="fab fa-whatsapp text-lg"></i></a>
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-foreground">Services</h4>
+                    <ul class="space-y-1">
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/products/erpnext">ERPNext Implementation</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/products/iot">IoT & RFID Solutions</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/products/frappe-ecosystem">Custom Software Development</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/products/iot/retail">Garments Industry Solutions</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/products/iot/supply-chain">Logistics Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-foreground">Quick Links</h4>
+                    <ul class="space-y-1">
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/marketplace">Marketplace</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/community">Freelance Community</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/success-stories">Success Stories</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/about">About Us</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors inline-block" href="https://www.budeglobal.in/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-3">
+                    <h4 class="font-semibold text-foreground">Stay Connected</h4>
+                    <div class="space-y-1.5">
+                        <div class="flex items-center gap-2.5 text-sm text-muted-foreground">
+                            <i class="fas fa-envelope text-primary/70"></i>
+                            <span>budeglobalerp@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-sm text-muted-foreground">
+                            <i class="fas fa-phone text-primary/70"></i>
+                            <span>+91 9159761766</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-sm text-muted-foreground">
+                            <i class="fas fa-map-pin text-primary/70"></i>
+                            <span>Coimbatore, Tamil Nadu, India</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-sm text-muted-foreground">
+                            <i class="fas fa-globe text-primary/70"></i>
+                            <span>www.budeglobal.in</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8"></div>
+            
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-6">
+                <p class="text-sm text-muted-foreground order-3 lg:order-1">© 2026 Bude Global Enterprise. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 order-1 lg:order-2 flex-1 px-4">
+                    <a class="text-sm text-muted-foreground hover:text-primary transition-colors hover:underline" href="https://www.budeglobal.in/privacy">Privacy Policy</a>
+                    <a class="text-sm text-muted-foreground hover:text-primary transition-colors hover:underline" href="https://www.budeglobal.in/terms">Terms of Service</a>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-muted-foreground order-2 lg:order-3 whitespace-nowrap">
+                    <img src="images/BUDE-Logo.png" alt="Bude Global Enterprise Logo" class="h-5 w-auto opacity-50" width="168" height="140">
+                    <span>Powered by Bude Global Enterprise</span>
+                </div>
+            </div>
         </div>
     </footer>
 
