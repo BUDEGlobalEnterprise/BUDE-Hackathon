@@ -70,7 +70,7 @@ Your main page (`index.html`) will show all hackathons, and each hackathon will 
 1. Push your changes to GitHub
 2. Go to your repository **Settings** → **Pages**
 3. Under "Source", select the branch you want to deploy (usually `main`)
-4. Your hackathon platform will be live at: `https://your-username.github.io/BLT-Hackathon/`
+4. Your hackathon platform will be live at: `https://hackathon.budeglobal.in/`
 
 ## 📖 Configuration Guide
 
@@ -95,7 +95,7 @@ github: {
 }
 ```
 
-**New: Organization Support**
+### Organization Support
 
 You can now track all repositories in a GitHub organization instead of listing them individually:
 
@@ -109,7 +109,8 @@ github: {
 
 When an `organization` field is specified, the system will automatically fetch all repositories from that organization and track them for the hackathon. You can combine this with explicit repositories if needed.
 
-**GitHub Token (Recommended):**
+### GitHub Token (Recommended)
+
 - Go to [GitHub Settings → Tokens](https://github.com/settings/tokens)
 - Create a new token with `public_repo` scope
 - Add it to the config to avoid API rate limits (60 requests/hour without token, 5000 with token)
@@ -161,12 +162,10 @@ Replace the gradient banner with a custom image by modifying `index.html`:
      style="background-image: url('images/banner.jpg'); background-size: cover;">
 ```
 
-### Changing Colors
+The dashboard uses Tailwind CSS. Main brand colors can be changed by replacing `blue-700` and `blue-800` classes with your preferred color:
 
-The dashboard uses Tailwind CSS. Main brand colors can be changed by replacing `red-600` and `red-700` classes with your preferred color:
-
-- `red-600` → `blue-600`, `green-600`, `purple-600`, etc.
-- `red-700` → `blue-700`, `green-700`, `purple-700`, etc.
+- `blue-700` → `green-600`, `purple-600`, etc.
+- `blue-800` → `green-700`, `purple-700`, etc.
 
 ### Performance Optimization
 
@@ -207,11 +206,12 @@ This can reduce the CSS from ~3MB to ~10KB.
 The platform now supports hosting multiple hackathons on a single deployment:
 
 1. **Configure multiple hackathons** in `js/hackathons-config.js`
-2. **Each hackathon gets a unique slug** used in the URL (e.g., `hackathon.html?slug=blt-2024`)
+2. **Each hackathon gets a unique slug** used in the URL (e.g., `hackathon.html?slug=bude-community-2026`)
 3. **Main index page** at `/` lists all hackathons with filtering by status (ongoing, upcoming, ended)
 4. **Individual hackathon pages** accessible via slug show full dashboard with stats and leaderboard
 
 **Example configuration:**
+
 ```javascript
 const HACKATHONS_CONFIG = {
     hackathons: [
@@ -257,8 +257,8 @@ npx serve
 
 ### File Structure
 
-```
-BLT-Hackathon/
+```text
+BUDE-Hackathon/
 ├── index.html                  # Main page listing all hackathons
 ├── hackathon.html              # Individual hackathon dashboard
 ├── js/
@@ -285,9 +285,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## 🙏 Acknowledgments & Credits
 
-Inspired by [OWASP BLT](https://github.com/OWASP-BLT/BLT) hackathon functionality.
+This project is a customized fork of the [OWASP BLT Hackathon](https://github.com/OWASP-BLT/BLT-Hackathon) platform. We are grateful to the **OWASP BLT** community for their incredible open-source contribution which serves as the foundation for this dashboard.
 
 ## 💡 Tips & Best Practices
 
@@ -317,9 +317,9 @@ A: Absolutely! The HTML and CSS are fully customizable.
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/OWASP-BLT/BLT-Hackathon/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/OWASP-BLT/BLT-Hackathon/discussions)
+- **Issues**: [GitHub Issues](https://github.com/BUDEGlobalEnterprise/BUDE-Hackathon/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/BUDEGlobalEnterprise/BUDE-Hackathon/discussions)
 
 ---
 
-Made with ❤️ by the OWASP BLT community
+Made with ❤️ by the BUDE Global Community
