@@ -202,3 +202,6 @@ Once deployed, share your hackathon dashboard:
 - 🐛 Report issues on [GitHub Issues](https://github.com/OWASP-BLT/BLT-Hackathon/issues)
 
 Happy hacking! 🚀
+---
+
+Made with ❤️ by the OWASP BLT community

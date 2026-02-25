@@ -6,15 +6,15 @@
 
 const HACKATHON_CONFIG = {
     // Basic Information
-    name: "My Awesome Hackathon",
+    name: "BUDE Global Community Hackathon",
     description: `
-        Welcome to our hackathon! This is an exciting opportunity to contribute to open source projects
-        and collaborate with other developers. Join us in making great software!
+        Welcome to the BUDE Global Community Hackathon! Join us in building the future of open source 
+        enterprise solutions and collaborate with developers worldwide.
     `,
     
     // Optional rules section
     rules: `
-        1. All pull requests must be submitted during the hackathon period
+        1. All pull requests must be submitted during the hackathon period (Mar 01, 2026 - Mar 31, 2026)
         2. PRs must be merged to count towards the leaderboard
         3. Only pull requests to the listed repositories will count
         4. Be respectful and follow each project's contribution guidelines
@@ -22,8 +22,8 @@ const HACKATHON_CONFIG = {
     `,
     
     // Hackathon Timeline (ISO 8601 format)
-    startTime: "2025-11-01T00:00:00Z",
-    endTime: "2026-05-31T23:59:59Z",
+    startTime: "2026-03-01T00:00:00Z",
+    endTime: "2026-03-31T23:59:59Z",
     
     // GitHub Configuration
     github: {
@@ -35,17 +35,12 @@ const HACKATHON_CONFIG = {
         // List of repositories to track
         // Format: "owner/repo"
         repositories: [
-            "OWASP-BLT/BLT",
-            "OWASP-BLT/BLT-Flutter",
-            "OWASP-BLT/BLT-Bacon",
-            "OWASP-BLT/BLT-Action",
-            "OWASP-BLT/BLT-Extension",
-            "OWASP-BLT/OWASP-BLT-Website-Monitor",
-            "OWASP-BLT/BLT-on-Cloudflare",
-            "OWASP-BLT/BLT-Tomato",
-            "OWASP-BLT/BLT-Sammich",
-            "OWASP-BLT/OWASP-BLT-Lyte",
-            "OWASP-BLT/.github"
+            "BUDEGlobalEnterprise/bude-global-neuro-chain-react",
+            "BUDEGlobalEnterprise/bude-global-tech-presentations",
+            "BUDEGlobalEnterprise/bude-first-contribution",
+            "BUDEGlobalEnterprise/bude-logo-generator",
+            "BUDEGlobalEnterprise/bude-global-implementation",
+            "BUDEGlobalEnterprise/bude-global-legal-documents"
         ]
     },
     
@@ -80,5 +75,8 @@ const HACKATHON_CONFIG = {
         
         // Show participant reviews in review leaderboard
         showReviewsInLeaderboard: true
-    }
+    },
+    
+    // Banner image (optional)
+    bannerImage: "images/BUDE_GLOBAL_BUDE_Hackathons_MARCH.svg"
 };

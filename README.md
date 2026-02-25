@@ -1,6 +1,6 @@
-# BLT-Hackathon 🏆
+# BUDE Global Hackathons 🏆
 
-A self-hosted GitHub Pages hackathon platform that lets you conduct a hackathon on your project with **charts**, **leaderboards**, and **prizes**!
+The official open source hackathon platform for the **BUDE Global Community**, featuring real-time **charts**, **leaderboards**, and **prizes**!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue)](https://pages.github.com/)
